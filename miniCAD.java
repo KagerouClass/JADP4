@@ -23,15 +23,23 @@ public class miniCAD {
         panel.addMouseWheelListener(new mouseListener());
         panel.addMouseMotionListener(new mouseListener());
         //panel.addMouseMotionListener(new Mouse_Listener());
+        JPanel southpanel = new JPanel();
+        southpanel.setPreferredSize(new Dimension(600,30));
+        southpanel.setLayout(null);
         //test
+        JLabel status = new JLabel();
+        status.setBounds(20,5,600,20);
 
+        frame.add(southpanel,BorderLayout.SOUTH);
+        southpanel.add(status);
+        status.setText("welcome to miniCAD!");
 
     }
     private static void initMenuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         frame.setJMenuBar(menuBar);
-
+        menuBar.setBorderPainted(false);
         // initial the "file" menu
         JMenu fileInMenu = new JMenu("File");
         menuBar.add(fileInMenu);
