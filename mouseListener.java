@@ -101,7 +101,6 @@ public class mouseListener implements MouseListener, MouseMotionListener, MouseW
         int delta_x = move_x - prev_x;
         int delta_y = move_y - prev_y;
 
-        System.out.println("drag" + event.getX() + event.getY());
         if(panelOfCAD.currentShapeIndex >= 0)//有形状被选中
             if(Math.abs(delta_x) > 10 || Math.abs(delta_y) > 10)
             {
