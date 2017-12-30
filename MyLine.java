@@ -21,7 +21,7 @@ public class MyLine extends shapeComponent {
     private void gatherShapePoint()
     {
         int s = getStroke()>5 ? (int)(getStroke()/1.5) : 5;
-        s = s<30? s :30;
+        s = s<10? s :10;
         if(getY_start() - getY_end() == 0)
         {
             for(int out = -s; out < s; ++out)
@@ -41,8 +41,8 @@ public class MyLine extends shapeComponent {
                  i <= Math.max(getX_start(), getX_end());
                   ++i)
             {
-                int x = i + s;
-                int y = (int)(k*(x-s-(getX_start()))+getY_end());
+                int x = i + out;
+                int y = (int)(k * (x - out) + getY_start() - getX_start() * k);
                 addPointToHashSet(x, y);
             }
     }
