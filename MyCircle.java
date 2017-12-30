@@ -24,7 +24,7 @@ public class MyCircle extends shapeComponent {
         for (int i =0;i<360;i++)
         {
             int s = getStroke()>5 ? (int)(getStroke()/1.5) : 5;
-            s = s<30? s :30;
+            s = s<10? s :10;
             for(int out =-s; out <= s; ++out)
             {
                 for(int in = -s; in <= s; in++)
