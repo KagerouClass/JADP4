@@ -12,6 +12,14 @@ class SaveReadyToCreate extends action
         newOutput.savePicture();
     }
 }
+class OpenReadyToCreate extends action
+{
+    @Override
+    public void func() {
+        IOFile newOutput = new IOFile();
+        newOutput.openPicture();
+    }
+}
 class ExitReadyToCreate extends action
 {
     @Override
@@ -63,10 +71,6 @@ public class menuListener implements ActionListener
             action response = (action)c.newInstance();
             response.func();
         }
-        catch (ClassNotFoundException exceptionCNFE)
-        {
-            exceptionCNFE.printStackTrace();
-        }
         catch (IllegalAccessException exceptionIAE)
         {
             exceptionIAE.printStackTrace();
@@ -75,5 +79,10 @@ public class menuListener implements ActionListener
         {
             exceptionIE.printStackTrace();
         }
+        catch (ClassNotFoundException exceptionCNFE)
+        {
+            exceptionCNFE.printStackTrace();
+        }
+
     }
 }

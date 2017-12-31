@@ -18,7 +18,7 @@ public class panelOfCAD extends JPanel
     {
         super.paintComponent(g);
         Graphics2D g2d=(Graphics2D)g;
-        if(!flag)
+        /*if(!flag)
         {
             MyRectangle test1 = new MyRectangle(Color.black, 1, 50, 100, 90, 300);
             listOfComponent.add(test1);
@@ -27,7 +27,7 @@ public class panelOfCAD extends JPanel
             listOfComponent.add(test2);
             test1.draw(g2d);
             flag = true;
-        }
+        }*/
         for( shapeComponent s : listOfComponent)
         {
             s.draw(g2d);

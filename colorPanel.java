@@ -62,7 +62,5 @@ public class colorPanel extends JPanel{
         this.add(redPanel);
         this.add(greenPanel);
         this.add(bluePanel);
-
-        //this.add(jp5,BorderLayout.SOUTH);
     }
 }
