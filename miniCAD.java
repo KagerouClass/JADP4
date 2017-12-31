@@ -4,9 +4,9 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
 public class miniCAD {
-    public static JFrame frame = new JFrame();
+    private static JFrame frame = new JFrame();
     public static panelOfCAD panel = new panelOfCAD();
-
+    private static colorPanel colorP = new colorPanel();
     public static void main(String[] args)
     {
         initMenuBar();
@@ -18,21 +18,23 @@ public class miniCAD {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.add(panel);
+
         frame.addKeyListener(new keyboardListener());
         panel.addMouseListener(new mouseListener());
         panel.addMouseWheelListener(new mouseListener());
         panel.addMouseMotionListener(new mouseListener());
         //panel.addMouseMotionListener(new Mouse_Listener());
-        JPanel southpanel = new JPanel();
-        southpanel.setPreferredSize(new Dimension(600,30));
-        southpanel.setLayout(null);
+        JPanel statusPanel = new JPanel();
+        statusPanel.setPreferredSize(new Dimension(600,30));
+        statusPanel.setLayout(null);
         //test
         JLabel status = new JLabel();
         status.setBounds(20,5,600,20);
 
-        frame.add(southpanel,BorderLayout.SOUTH);
-        southpanel.add(status);
+        frame.add(statusPanel,BorderLayout.SOUTH);
+        statusPanel.add(status);
         status.setText("welcome to miniCAD!");
+        frame.add(colorP, BorderLayout.NORTH);
 
     }
     private static void initMenuBar()
@@ -45,11 +47,11 @@ public class miniCAD {
         menuBar.add(fileInMenu);
 
         JMenuItem openInItem = new JMenuItem("Open");
-
+        openInItem.addActionListener(new menuListener());
         fileInMenu.add(openInItem);
 
         JMenuItem saveInItem = new JMenuItem("Save");
-
+        saveInItem.addActionListener(new menuListener());
         fileInMenu.add(saveInItem);
 
         JMenuItem exitInItem = new JMenuItem("Exit");
@@ -71,6 +73,10 @@ public class miniCAD {
         JMenuItem circleInItem = new JMenuItem("circle");
         circleInItem.addActionListener(new menuListener());
         shapeInMenu.add(circleInItem);
+
+        JMenuItem stringInItem = new JMenuItem("string");
+        stringInItem.addActionListener(new menuListener());
+        shapeInMenu.add(stringInItem);
     }
 
 }

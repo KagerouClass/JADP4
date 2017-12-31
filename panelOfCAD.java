@@ -23,6 +23,9 @@ public class panelOfCAD extends JPanel
             MyRectangle test1 = new MyRectangle(Color.black, 1, 50, 100, 90, 300);
             listOfComponent.add(test1);
             test1.draw(g2d);
+            MyString test2 = new MyString(Color.black, 1, 100, 200, 150, 250, "微软雅黑",50, "Hello World!");
+            listOfComponent.add(test2);
+            test1.draw(g2d);
             flag = true;
         }
         for( shapeComponent s : listOfComponent)

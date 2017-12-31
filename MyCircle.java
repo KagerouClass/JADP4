@@ -15,8 +15,7 @@ public class MyCircle extends shapeComponent {
         g.setStroke(new BasicStroke(getStroke(), BasicStroke.JOIN_ROUND,BasicStroke.JOIN_BEVEL));
         g.drawOval(Math.min(getX_start(), getX_end()),
                 Math.min(getY_start(), getY_end()),
-                Math.max(Math.abs(getX_start()-getX_end()), Math.abs(getY_start()-getY_end())),
-                Math.max(Math.abs(getX_start()-getX_end()), Math.abs(getY_start()-getY_end())));
+                Math.abs(getX_end() - getX_start()), Math.abs(getX_end() - getX_start()));
         gatherShapePoint();
     }
     private void gatherShapePoint()

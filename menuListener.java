@@ -1,10 +1,18 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-abstract class action
+abstract class action//使用RTTI+反射避免出现switch case，增强可维护性
 {
     abstract public void func();
 }
-class Exit extends action
+class SaveReadyToCreate extends action
+{
+    @Override
+    public void func() {
+        IOFile newOutput = new IOFile();
+        newOutput.savePicture();
+    }
+}
+class ExitReadyToCreate extends action
 {
     @Override
     public void func() {
@@ -32,6 +40,14 @@ class circleReadyToCreate extends action
     @Override
     public void func() {
         panelOfCAD.currentCreateShape = "circleCreate";
+        System.out.println("Change to create " + panelOfCAD.currentCreateShape);
+    }
+}
+class stringReadyToCreate extends action
+{
+    @Override
+    public void func() {
+        panelOfCAD.currentCreateShape = "stringCreate";
         System.out.println("Change to create " + panelOfCAD.currentCreateShape);
     }
 }

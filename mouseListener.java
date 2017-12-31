@@ -4,6 +4,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
+import javax.swing.JOptionPane;
 abstract class createShape
 {
     abstract public void create();
@@ -34,8 +35,20 @@ class circleCreate extends createShape
     public void create() {
         MyCircle newCircle = new MyCircle(Color.BLACK, 1,
                 mouseListener.start_x,mouseListener.start_y,
-                mouseListener.end_x, mouseListener.end_y);
+                mouseListener.start_x+100, mouseListener.start_y+100);
         miniCAD.panel.listOfComponent.add(newCircle);
+    }
+}
+class stringCreate extends createShape
+{
+    @Override
+    public void create() {
+
+        MyString newString = new MyString(Color.BLACK, 1,
+                mouseListener.start_x,mouseListener.start_y,
+                mouseListener.end_x, mouseListener.end_y,
+                "微软雅黑", mouseListener.end_x - mouseListener.start_x, mouseListener.string);
+        miniCAD.panel.listOfComponent.add(newString);
     }
 }
 public class mouseListener implements MouseListener, MouseMotionListener, MouseWheelListener
@@ -46,6 +59,7 @@ public class mouseListener implements MouseListener, MouseMotionListener, MouseW
     static int end_y;
     static int prev_x;
     static int prev_y;
+    static String string;
     @Override
     public void mouseClicked(MouseEvent event)
     {
@@ -74,6 +88,11 @@ public class mouseListener implements MouseListener, MouseMotionListener, MouseW
         {
             try {
                 System.out.println(panelOfCAD.currentCreateShape);
+                if(panelOfCAD.currentCreateShape.equals("stringCreate"))
+                {
+                    string=JOptionPane.showInputDialog(null,
+                            "请输入你想写的文本","请在这里输入");
+                }
                 Class c = Class.forName(panelOfCAD.currentCreateShape);
                 createShape response = (createShape)c.newInstance();
                 response.create();

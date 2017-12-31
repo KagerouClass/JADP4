@@ -71,6 +71,11 @@ public class shapeComponent
         return color;
     }
 
+    public void setColor(Color color)
+    {
+        this.color = color;
+    }
+
     public float getStroke()
     {
         return stroke;

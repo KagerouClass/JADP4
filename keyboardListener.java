@@ -19,7 +19,7 @@ public class keyboardListener implements KeyListener
             {
                 panelOfCAD.listOfComponent.remove(panelOfCAD.currentShapeIndex);
                 miniCAD.panel.repaint();
-                panelOfCAD.currentShapeIndex = 0;
+                panelOfCAD.currentShapeIndex = -1;
             }
         }
         else if(event.getKeyCode() == 38)//up
