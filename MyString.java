@@ -31,7 +31,7 @@ public class MyString extends shapeComponent {
         Width = stringBounds.getWidth();
         if (string!= null )
             g.drawString(string,(int)(getX_start()-Width/2), (int)(getY_start()+Height/6));
-
+        removePointFromHashSet();
         gatherShapePoint();
     }
     public String getString()

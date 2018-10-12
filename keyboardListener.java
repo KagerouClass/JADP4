@@ -64,7 +64,7 @@ public class keyboardListener implements KeyListener
         }
         else
         {
-            //panelOfCAD.currentShapeIndex = 0;
+            //panelOfCAD.currentShapeIndex = -1;
         }
     }
 

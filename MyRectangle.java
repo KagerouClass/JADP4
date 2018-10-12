@@ -19,6 +19,7 @@ public class MyRectangle extends shapeComponent {
                    Math.min(getY_start(), getY_end()),
                    Math.abs(getX_start() - getX_end()),
                    Math.abs(getY_start() - getY_end()) );
+        removePointFromHashSet();
         gatherShapePoint();
     }
 

@@ -91,9 +91,12 @@ public class shapeComponent
         this.stroke = stroke;
     }
 
+    public void removePointFromHashSet()
+    {
+        pointHashSet.clear();
+    }
     public void addPointToHashSet(int x,int y)
     {
-
         pointHashSet.add(new Point(x, y));
     }
 

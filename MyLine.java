@@ -16,6 +16,7 @@ public class MyLine extends shapeComponent {
         g.setColor(getColor());
         g.setStroke(new BasicStroke(getStroke(), BasicStroke.JOIN_ROUND,BasicStroke.JOIN_BEVEL));
         g.drawLine(getX_start(), getY_start(), getX_end(), getY_end());
+        removePointFromHashSet();
         gatherShapePoint();
     }
     private void gatherShapePoint()

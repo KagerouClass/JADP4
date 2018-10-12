@@ -16,6 +16,7 @@ public class MyCircle extends shapeComponent {
         g.drawOval(Math.min(getX_start(), getX_end()),
                 Math.min(getY_start(), getY_end()),
                 Math.abs(getX_end() - getX_start()), Math.abs(getX_end() - getX_start()));
+        removePointFromHashSet();
         gatherShapePoint();
     }
     private void gatherShapePoint()
